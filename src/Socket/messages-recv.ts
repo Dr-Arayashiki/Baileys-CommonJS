@@ -72,9 +72,9 @@ const normalizeJidKeepDevice = (jid?: string | null) => {
 
 /** força criação/checagem de sessão para um JID */
 const ensureAssertSession = async (
-  assertSessions: (jids: string[], force: boolean) => Promise<void>,
-  logger: any,
-  jids: (string | undefined | null)[]
+   assertSessions: (jids: string[], force: boolean) => Promise<boolean | void>,
+   logger: any,
+   jids: (string | undefined | null)[]
 ) => {
   const candidates = Array.from(
     new Set(
